@@ -1,0 +1,54 @@
+h1 {
+    background-color: rgb(75, 87, 102);
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+ul {
+    background-color: rgb(42, 179, 233);
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+header nav ul li:hover {
+    background-color: blue;
+}
+
+header nav ul li {
+    font-size: 30px;
+    display: inline;
+    margin-left: 4cm;
+    margin-right: 2cm;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-style: inherit;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: uppercase;
+}
+
+body {
+    background-image: url(https://www.imgworlds.com/wp-content/uploads/2015/12/18-CONTACTUS-HEADER.jpg);
+}
+
+#images-section {
+    text-align: center;
+}
+
+img:hover {
+    opacity: 1;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    border: 10px solid #002fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    opacity: 0.7;
+}
