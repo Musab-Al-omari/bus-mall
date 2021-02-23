@@ -166,6 +166,7 @@ function handleClick(event) {
       lineWriter();
       imagesSection.removeEventListener('click', handleClick);
       chartDrawer();
+      updateList();
 
     }
     else {
@@ -229,3 +230,16 @@ function chartDrawer(){
   });
 }
 
+function updateList(){
+  let listString = JSON.stringify(ShowingImage.all);
+  localStorage.setItem('productOrders',listString);
+}
+function getList(){
+  let listString = localStorage.getItem('productOrders');
+  if(listString){
+    ShowingImage.all = JSON.parse(listString);
+  }
+}
+
+
+getList();
