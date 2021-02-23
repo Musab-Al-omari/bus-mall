@@ -165,6 +165,8 @@ function handleClick(event) {
     if (eventRemoval === 25) {
       lineWriter();
       imagesSection.removeEventListener('click', handleClick);
+      chartDrawer();
+
     }
     else {
       render();
@@ -178,3 +180,52 @@ render();
 
 
 // llh;
+function chartDrawer(){
+
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const orderPicName=[];
+  const orderData=[];
+  const orderViews=[];
+  for (let i = 0; i < ShowingImage.all.length; i++) {
+    orderPicName.push(ShowingImage.all[i].name);
+    orderData.push(ShowingImage.all[i].votes);
+    orderViews.push(ShowingImage.all[i].views);
+  }
+
+
+
+
+  let chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+      labels: orderPicName,
+      datasets: [{
+        label: 'Data',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: orderData
+      },
+      {
+        label: 'Views',
+        backgroundColor: 'rgb(100, 99, 132)',
+        borderColor: 'rgb(100, 99, 132)',
+        data: orderViews
+      }]
+    },
+
+    // Configuration options go here
+    options: {
+      title: {
+        fontColor:'#00eeff',
+        display: true,
+        text: 'Custom Chart Title',
+        fontSize:40},
+      legend:{labels: {fontColor: 'black' },
+        fontSize:20}
+    }
+  });
+}
+
